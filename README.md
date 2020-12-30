@@ -1,0 +1,1 @@
+A CLI Expense tracking npm package
