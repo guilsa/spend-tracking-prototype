@@ -10,4 +10,3 @@ A CLI Expense tracking npm package
 - [ ] Must use app daily (Node on iOS possible through ish-app/ish)
 - [ ] Add TS, Redux, ImmutableJS, tests (code kata)
 - [ ] Fork project, hook up Firebase, migrate to mobile React Native app
-

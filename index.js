@@ -3,6 +3,23 @@ let fs = require('fs')
 
 let store = []
 
+// If store doesn't exist, create one
+try {
+  if (!fs.existsSync('store.json')) {
+    const newData = [{ "budget": 0, "charges": [] }]
+    try {
+      fs.writeFileSync('store.json', JSON.stringify(newData, null, 2))
+    } catch (err) {
+      console.error('error', err)
+    }
+    // If
+    console.log('\nYou are broke.');
+    console.log('👉 Please select "Edit my current budget" to add more money.');
+  }
+} catch(err) {
+  console.error(err)
+}
+
 try {
   const data = fs.readFileSync('store.json', 'utf8')
   store = JSON.parse(data)
@@ -103,8 +120,8 @@ const edit_budget_questions = [
 
 function editBudget() {
   inquirer.prompt(edit_budget_questions).then((answers) => {
-    let amount = Number(answers.new_spend)
-    store.budget = amount
+    let amount = Number(answers.new_budget)
+    store[0].budget = amount
     try {
       fs.writeFileSync('store.json', JSON.stringify(store, null, 2))
     } catch (err) {
