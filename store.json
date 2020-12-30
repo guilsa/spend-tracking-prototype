@@ -1,0 +1,25 @@
+[
+  {
+    "budget": 81.49,
+    "charges": [
+      {
+        "type": "charge",
+        "category": "supermarket",
+        "amount": 5.25,
+        "date": "2020-12-30T08:30:10.740Z"
+      },
+      {
+        "type": "charge",
+        "category": "gas",
+        "amount": 3.26,
+        "date": "2020-12-30T08:30:19.387Z"
+      },
+      {
+        "type": "charge",
+        "category": "supermarket",
+        "amount": 10,
+        "date": "2020-12-30T08:31:45.782Z"
+      }
+    ]
+  }
+]
