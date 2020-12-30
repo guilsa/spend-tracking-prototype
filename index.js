@@ -28,7 +28,7 @@ function prompt() {
     if (answers.selection === 'Insert a new charge') {
       insertNewCharge()
     } else if (answers.selection === 'Edit my current budget') {
-      // editBudget()
+      editBudget()
     }
   });
 }
@@ -93,23 +93,24 @@ function insertNewCharge() {
 // // USER SELECTION - EDIT BUDGET
 // // ----
 
-// const edit_budget_questions = [
-//   {
-//     type: 'input',
-//     name: 'new_budget',
-//     message: 'How much is your new budget?',
-//   },
-// ];
+const edit_budget_questions = [
+  {
+    type: 'input',
+    name: 'new_budget',
+    message: 'How much is your new budget?',
+  },
+];
 
-// function editBudget() {
-//   inquirer.prompt(edit_budget_questions).then((answers) => {
-//     store.budget = answers.new_budget
-//     try {
-//       fs.writeFileSync('store.json', JSON.stringify(store))
-//     } catch (err) {
-//       console.error('error', err)
-//     }
-//   });
-// }
+function editBudget() {
+  inquirer.prompt(edit_budget_questions).then((answers) => {
+    let amount = Number(answers.new_spend)
+    store.budget = amount
+    try {
+      fs.writeFileSync('store.json', JSON.stringify(store, null, 2))
+    } catch (err) {
+      console.error('error', err)
+    }
+  });
+}
 
 main()
