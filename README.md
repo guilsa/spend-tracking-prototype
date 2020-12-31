@@ -1,12 +1,18 @@
 A CLI Expense tracking npm package
 
-## TODO:
+## Todo:
 
-- [x] Update store model to track each expense
-- [x] Allow user to select a spend category
-- [ ] Ensure we round to 2 decimals places
-- [ ] If data store doesn't exist, create it
 - [ ] Allow user to manage multiple budgets
 - [ ] Must use app daily (Node on iOS possible through ish-app/ish)
-- [ ] Add TS, Redux, ImmutableJS, tests (code kata)
+- [ ] Add TS, Redux, immer or ImmutableJS, tests (code kata)
 - [ ] Fork project, hook up Firebase, migrate to mobile React Native app
+
+
+
+
+Places we deal with store object:
+1. reading file on app bootstrap
+2. displaying budget on main() prompt
+3. mutating store budget on insertNewCharge()
+4. mutating store charges on insertNewCharge()
+5. mutating store budget on editBudget()

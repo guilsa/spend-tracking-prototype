@@ -1,6 +1,13 @@
 [
   {
     "budget": 100,
-    "charges": []
+    "charges": [
+      {
+        "type": "charge",
+        "category": "supermarket",
+        "amount": "5.50",
+        "date": "2020-12-31T01:13:50.733Z"
+      }
+    ]
   }
 ]

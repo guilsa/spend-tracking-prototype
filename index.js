@@ -12,7 +12,6 @@ try {
     } catch (err) {
       console.error('error', err)
     }
-    // If
     console.log('\nYou are broke.');
     console.log('👉 Please select "Edit my current budget" to add more money.');
   }
@@ -81,9 +80,9 @@ let output = [];
 
 function insertNewCharge() {
   inquirer.prompt(questions).then((answers) => {
-    let amount = Number(answers.new_spend)
+    let amount = (Number(answers.new_spend)).toFixed(2)
     output.push(amount)
-    store[0].budget -= amount
+    store[0].budget = (store[0].budget - amount).toFixed(2)
     let charge = {
       type: 'charge',
       category: answers.category,
